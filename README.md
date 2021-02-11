@@ -5,7 +5,7 @@
 Si se deseea hacer uso del programa lo primero que debe realizarse el clonar el repositorio almacenado en Github a través del siguiente comando:
 
 ```
-git clone https://github.com/csarssj/ARREP-LAB-1.git
+git clone https://github.com/csarssj/AREP-LAB-3.git
 
 ```
 O si desea puede descargarlo como archivo zip y luego descomprimirlo en la carpeta que desee.
@@ -69,7 +69,7 @@ El sistema, mas alla de facilitar el registro de las iniciativas e ideas de proy
 
 [César González](https://github.com/csarssj) 
 
-_Fecha : 24 de enero del 2021_ 
+_Fecha : 11 de febrero del 2021_ 
 
 
 ## License
