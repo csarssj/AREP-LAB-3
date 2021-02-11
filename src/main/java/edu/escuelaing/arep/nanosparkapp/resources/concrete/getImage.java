@@ -22,7 +22,7 @@ public class getImage implements getFiles{
 	@Override
 	public void getFiles(Socket clientSocket, String path) {
 		try{
-            BufferedImage image = ImageIO.read(new File("resources/"+path));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/src/main/resources/"+path));
             ByteArrayOutputStream ArrBytes = new ByteArrayOutputStream();
             DataOutputStream writeImg = new DataOutputStream(clientSocket.getOutputStream());
             ImageIO.write(image, "PNG", ArrBytes);

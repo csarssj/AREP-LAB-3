@@ -23,7 +23,7 @@ public class getFile implements getFiles{
             String text = "HTTP/1.1 200 OK\r\n"
 	                + "Content-Type: text/"+type+"\r\n"
 	                 + "\r\n";
-            BufferedReader reader = new BufferedReader(new FileReader("resources/"+path));
+            BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/main/resources/"+path));
             String infile = null;
             while ((infile = reader.readLine()) != null) {
                   text = text + infile;
