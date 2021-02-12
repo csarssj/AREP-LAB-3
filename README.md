@@ -29,7 +29,7 @@ mvn javadoc:javadoc
 Ejecutando el siquiente comando en la consola y accediendo al siguiente link se puede visualizar una prueba.
 
 ```
-java -cp target/classes;target/dependency/* edu.escuelaing.arsw.webserver.Client
+java -cp target/classes;target/dependency/* edu.escuelaing.arsw.webserver.MyNanoSpark
 
 ```
 o ingresando a través de este link desplegado en heroku:
@@ -53,7 +53,7 @@ El sistema, mas alla de facilitar el registro de las iniciativas e ideas de proy
 
 ### Diagrama de clases y Reporte de pruebas
 
-[Se encuentran en este documento](https://github.com/csarssj/AREP-LAB-3/blob/master/Arquitectura_Empresarial__3.pdf)
+[Se encuentran en este documento](https://github.com/csarssj/AREP-LAB-3/blob/main/Arquitectura_Empresarial__3.pdf)
 
 
 ## Construido en
@@ -66,12 +66,13 @@ El sistema, mas alla de facilitar el registro de las iniciativas e ideas de proy
 
 *Puede acceder a las siguientes direcciones para:*
 
-	- *Resuesta del mapeo /app accediendo a la base de datos:* https://nanospark-app.herokuapp.com/Apps
-	- *Resuesta de un HTML con CSS e Imagenes:* https://nanospark-app.herokuapp.com/index.hmtl
-	- *Resuesta de un HTML con CSS Y JavaScript:* https://nanospark-app.herokuapp.com/example.hmtl
-	- *Resuesta de imagenes:*
-		* https://nanospark-app.herokuapp.com/ca.png
-		* https://nanospark-app.herokuapp.com/dr.png
+*Resuesta del mapeo /app accediendo a la base de datos:* https://nanospark-app.herokuapp.com/App
+
+*Resuesta de un HTML con CSS e Imagenes:* https://nanospark-app.herokuapp.com/index.hmtl
+   - *Resuesta de un HTML con CSS Y JavaScript:* https://nanospark-app.herokuapp.com/example.hmtl
+   - *Resuesta de imagenes:*
+   	* https://nanospark-app.herokuapp.com/ca.png
+	* https://nanospark-app.herokuapp.com/dr.png
 
 ## Integración continua
 
