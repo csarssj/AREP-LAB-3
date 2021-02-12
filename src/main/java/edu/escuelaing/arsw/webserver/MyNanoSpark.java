@@ -12,7 +12,7 @@ import edu.escuelaing.arsw.webserver.persistence.BDConnection;
  * 
  *@author ceseg
  */
-public class Client {
+public class MyNanoSpark {
 
     
     /**
@@ -29,7 +29,6 @@ public class Client {
         ExecutorService pool = Executors.newCachedThreadPool();
         BDConnection bd = new BDConnection();
         while (true) {
-        	//BDConnection bd = BDConnection.getBDConnection();
             Socket socket = serverSocket.accept();
             HttpServer req = new HttpServer(socket,bd);
             pool.execute(req);

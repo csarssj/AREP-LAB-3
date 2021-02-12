@@ -5,7 +5,7 @@
  */
 package edu.escuelaing.arsw.test;
 
-import edu.escuelaing.arsw.webserver.Client;
+import edu.escuelaing.arsw.webserver.MyNanoSpark;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,12 +17,12 @@ import java.net.URL;
  *  
  * @author ceseg
  */
-public class clientTest  extends Thread {
+public class NanoSparkTest  extends Thread {
     
     private static String url;
     private static int solicitudes;
     
-    public clientTest(String temp){ 
+    public NanoSparkTest(String temp){ 
       this.url=temp;
     }
     @Override
@@ -48,9 +48,9 @@ public class clientTest  extends Thread {
     public static void  main(String [] args) throws MalformedURLException, IOException{
         URL url = new URL(args[0]);
         solicitudes = Integer.parseInt(args[1]);
-        clientTest[] threads =  new clientTest[solicitudes];
+        NanoSparkTest[] threads =  new NanoSparkTest[solicitudes];
         for (int i = 0; i < solicitudes; i++) {
-            threads[i] = new clientTest(args[0]);
+            threads[i] = new NanoSparkTest(args[0]);
             threads[i].start();
         }
         int contador = 0;

@@ -19,6 +19,13 @@ mvn package
 
 ![image](https://github.com/csarssj/AREP-LAB-1/blob/master/resources/compilado.png)
 
+Ejecutando el siguiente comando puede generar la documentacion:
+
+```
+mvn javadoc:javadoc
+
+```
+
 Ejecutando el siquiente comando en la consola y accediendo al siguiente link se puede visualizar una prueba.
 
 ```
@@ -27,7 +34,7 @@ java -cp target/classes;target/dependency/* edu.escuelaing.arsw.webserver.Client
 ```
 o ingresando a través de este link desplegado en heroku:
 
-[heroku](https://calm-inlet-41116.herokuapp.com/index.html)
+[heroku](https://nanospark-app.herokuapp.com/example.html)
 
 ![image](https://github.com/csarssj/ARSW-4-Servidor-Web/blob/master/img/prueba.png)
 
@@ -46,7 +53,7 @@ El sistema, mas alla de facilitar el registro de las iniciativas e ideas de proy
 
 ### Diagrama de clases y Reporte de pruebas
 
-[Se encuentran en este documento](https://github.com/csarssj/AREP-LAB-1/blob/master/Dise%C3%B1o.pdf)
+[Se encuentran en este documento](https://github.com/csarssj/AREP-LAB-3/blob/master/Arquitectura_Empresarial__3.pdf)
 
 
 ## Construido en
@@ -55,7 +62,16 @@ El sistema, mas alla de facilitar el registro de las iniciativas e ideas de proy
 
 ## Despliegue en heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://caluladoraarem.herokuapp.com/inputdata)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://nanospark-app.herokuapp.com/example.html)
+
+*Puede acceder a las siguientes direcciones para:*
+
+	- *Resuesta del mapeo /app accediendo a la base de datos:* https://nanospark-app.herokuapp.com/Apps
+	- *Resuesta de un HTML con CSS e Imagenes:* https://nanospark-app.herokuapp.com/index.hmtl
+	- *Resuesta de un HTML con CSS Y JavaScript:* https://nanospark-app.herokuapp.com/example.hmtl
+	- *Resuesta de imagenes:*
+		* https://nanospark-app.herokuapp.com/ca.png
+		* https://nanospark-app.herokuapp.com/dr.png
 
 ## Integración continua
 
@@ -69,7 +85,7 @@ El sistema, mas alla de facilitar el registro de las iniciativas e ideas de proy
 
 [César González](https://github.com/csarssj) 
 
-_Fecha : 11 de febrero del 2021_ 
+_Fecha : 12 de febrero del 2021_ 
 
 
 ## License
