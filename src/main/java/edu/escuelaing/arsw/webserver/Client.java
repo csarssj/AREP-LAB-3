@@ -6,6 +6,8 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import edu.escuelaing.arsw.webserver.persistence.BDConnection;
+
 /**
  * 
  *@author ceseg
@@ -25,10 +27,11 @@ public class Client {
         System.out.println("Listo para recibir ...");
         
         ExecutorService pool = Executors.newCachedThreadPool();
-
+        BDConnection bd = new BDConnection();
         while (true) {
+        	//BDConnection bd = BDConnection.getBDConnection();
             Socket socket = serverSocket.accept();
-            HttpServer req = new HttpServer(socket);
+            HttpServer req = new HttpServer(socket,bd);
             pool.execute(req);
         }
     }

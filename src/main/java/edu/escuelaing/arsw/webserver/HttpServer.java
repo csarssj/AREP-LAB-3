@@ -20,17 +20,20 @@ import java.util.logging.Logger;
 
 import edu.escuelaing.arsw.webserver.tools.getFiles;
 import edu.escuelaing.arsw.webserver.tools.getImage;
+import edu.escuelaing.arsw.webserver.persistence.BDConnection;
 import edu.escuelaing.arsw.webserver.tools.getFile;
 
 public class HttpServer implements Runnable  {
     private final Socket clientSock;
+    private final BDConnection bd;
     /**
      * Crea un nuevo hilo ClientSock para el socket proporcionado
      *
      * @param clientSocket el socket para el cliente.
      */
-    public HttpServer (final Socket clientSocket) {
+    public HttpServer (final Socket clientSocket, final BDConnection bd) {
         this.clientSock = clientSocket;
+        this.bd = bd;
     }
     @Override
     public void run() {
@@ -46,32 +49,21 @@ public class HttpServer implements Runnable  {
                         break;
                     }
                 }
-                getFiles(path,clientSock);
-                /*if (element.contains("png") || element.contains("PNG")) {
-                    getImg.getImage(out,clientSock.getOutputStream(), element);
-
-                } else if (element.contains(".html")) {
-                    getFile.getFiles(element, clientSock.getOutputStream());
-                } else if (element.contains(".js")) {
-                    getJs.getJs(element, clientSock.getOutputStream());
-                } else if (element.contains(".css")) {
-                    getCss.getCss(element, clientSock.getOutputStream());
-                }else {
-                    outputLine = "HTTP/1.1 200 OK\r\n"
-                            + "Content-Type: text/html\r\n"
-                            + "\r\n"
-                            + "<!DOCTYPE html>\n"
-                            + "<html>\n"
-                            + "<head>\n"
-                            + "<meta charset=\"UTF-8\">\n"
-                            + "<title>Title of the document</title>\n"
-                            + "</head>\n"
-                            + "<body>\n"
-                            + "<h1>No existe el archivo seleccionado</h1>\n"
-                            + "</body>\n"
-                            + "</html>\n" + inputLine;
-                    out.println(outputLine);
-                }*/
+                if(path.startsWith("/App")) {
+                	 handler getA = (request) ->  clientSock.getOutputStream().write((
+                             "HTTP/1.1 200 OK\r\n"+
+                             "Access-Control-Allow-Origin: *\r\n"+
+                             "Content-Type: text/html\r\n\r\n"+
+                             "<html><head>"+
+                             "<title>App</title>"+
+                             "</head><body>"+
+                             "<h1>"+ bd.getPaises().toString()+
+                             "</h1>"+
+                             "</body></html>").getBytes());
+                     getA.get(path);
+                	
+                }
+                else{getFiles(path,clientSock);}
                 out.close();
                 in.close();
         } catch (IOException ex) {
@@ -91,7 +83,7 @@ public class HttpServer implements Runnable  {
     	}else {
     		PrintWriter out = new PrintWriter(
 	                clientSocket.getOutputStream(), true);
-    		outputLine = "HTTP/1.1 200 OK\r\n"
+    		outputLine = "HTTP/1.1 404 Not Found\r\n"
 	                + "Content-Type: text/html\r\n"
 	                 + "\r\n"
 	                 + "<!DOCTYPE html>\n"
